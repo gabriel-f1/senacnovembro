@@ -1,0 +1,91 @@
+/* Reset de margem e padding */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    background-color: rgb(90, 90, 90);
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Centralização do conteúdo principal */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative; /* Necessário para overlay */
+}
+
+/* Fundo com imagem borrada */
+main::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('fundo.jpg'); 
+    background-size: cover;
+    background-position: center;
+    filter: blur(8px);
+    z-index: -1; /* Coloca o fundo atrás do conteúdo */
+}
+
+/* Imagem */
+img {
+    border-radius: 10px;
+    margin-bottom: 40px;
+    z-index: 1; /* Garante que a imagem fique acima do fundo */
+}
+
+/* Botão */
+button {
+    padding: 30px 50px;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    z-index: 1; /* Garante que o botão fique acima do fundo */
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+/* Link dentro do botão */
+button a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Footer */
+footer {
+    background-color: rgb(90, 90, 90);
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+}
+
+.paragrafo {
+    font-size: 200%;
+    font-family:'Times New Roman', Times, serif;
+}
